@@ -14,6 +14,12 @@ app.get("/home", (req, res) => {
 });
 
 const start = async () => {
+  const connectionDb = await mongoose.connect(
+    "mongodb+srv://srkrtnmy:1BftugBoPzeTsxq9@zoomclonecluster.btgtnys.mongodb.net/"
+  );
+
+  console.log(`MONGO Connected DB Host: ${connectionDb.connection.host}`);
+
   app.listen(port, () => {
     console.log(`listening on port : ${port}`);
   });
